@@ -1,0 +1,170 @@
+[
+  {
+    "mine_id": "mine_001",
+    "equipment_id": "eq_001_01",
+    "type": "Excavator",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_001",
+    "equipment_id": "eq_001_02",
+    "type": "Drill Rig",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_001",
+    "equipment_id": "eq_001_03",
+    "type": "Loader",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_002",
+    "equipment_id": "eq_002_01",
+    "type": "Excavator",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_002",
+    "equipment_id": "eq_002_02",
+    "type": "Drill Rig",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_002",
+    "equipment_id": "eq_002_03",
+    "type": "Loader",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_005",
+    "equipment_id": "eq_005_01",
+    "type": "Excavator",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_005",
+    "equipment_id": "eq_005_02",
+    "type": "Drill Rig",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_005",
+    "equipment_id": "eq_005_03",
+    "type": "Loader",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_01",
+    "type": "Excavator",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_02",
+    "type": "Drill Rig",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_03",
+    "type": "Loader",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_04",
+    "type": "Crusher",
+    "status": "under_maintenance"
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_01",
+    "type": "Excavator",
+    "status": "under_maintenance"
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_02",
+    "type": "Drill Rig",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_03",
+    "type": "Loader",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_04",
+    "type": "Crusher",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_01",
+    "type": "Excavator",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_02",
+    "type": "Drill Rig",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_03",
+    "type": "Loader",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_04",
+    "type": "Crusher",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_01",
+    "type": "Excavator",
+    "status": "under_maintenance"
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_02",
+    "type": "Drill Rig",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_03",
+    "type": "Loader",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_04",
+    "type": "Crusher",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_011",
+    "equipment_id": "eq_011_01",
+    "type": "Excavator",
+    "status": "under_maintenance"
+  },
+  {
+    "mine_id": "mine_011",
+    "equipment_id": "eq_011_02",
+    "type": "Drill Rig",
+    "status": "operational"
+  },
+  {
+    "mine_id": "mine_011",
+    "equipment_id": "eq_011_03",
+    "type": "Loader",
+    "status": "operational"
+  }
+]

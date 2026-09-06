@@ -1,0 +1,202 @@
+[
+  {
+    "mine_id": "mine_001",
+    "factors": [
+      {
+        "name": "Equipment downtime",
+        "weight_pct": 20,
+        "value": 0.59
+      },
+      {
+        "name": "Environmental conditions",
+        "weight_pct": 25,
+        "value": 0.34
+      },
+      {
+        "name": "Production deviation",
+        "weight_pct": 40,
+        "value": 0.63
+      },
+      {
+        "name": "Operational delays",
+        "weight_pct": 15,
+        "value": 0.54
+      }
+    ]
+  },
+  {
+    "mine_id": "mine_002",
+    "factors": [
+      {
+        "name": "Equipment downtime",
+        "weight_pct": 25,
+        "value": 0.43
+      },
+      {
+        "name": "Environmental conditions",
+        "weight_pct": 40,
+        "value": 0.26
+      },
+      {
+        "name": "Production deviation",
+        "weight_pct": 15,
+        "value": 0.28
+      },
+      {
+        "name": "Operational delays",
+        "weight_pct": 20,
+        "value": 0.37
+      }
+    ]
+  },
+  {
+    "mine_id": "mine_005",
+    "factors": [
+      {
+        "name": "Equipment downtime",
+        "weight_pct": 40,
+        "value": 0.51
+      },
+      {
+        "name": "Environmental conditions",
+        "weight_pct": 15,
+        "value": 0.42
+      },
+      {
+        "name": "Production deviation",
+        "weight_pct": 20,
+        "value": 0.59
+      },
+      {
+        "name": "Operational delays",
+        "weight_pct": 25,
+        "value": 0.2
+      }
+    ]
+  },
+  {
+    "mine_id": "mine_007",
+    "factors": [
+      {
+        "name": "Equipment downtime",
+        "weight_pct": 20,
+        "value": 0.32
+      },
+      {
+        "name": "Environmental conditions",
+        "weight_pct": 40,
+        "value": 0.47
+      },
+      {
+        "name": "Production deviation",
+        "weight_pct": 15,
+        "value": 0.41
+      },
+      {
+        "name": "Operational delays",
+        "weight_pct": 25,
+        "value": 0.44
+      }
+    ]
+  },
+  {
+    "mine_id": "mine_008",
+    "factors": [
+      {
+        "name": "Equipment downtime",
+        "weight_pct": 40,
+        "value": 0.34
+      },
+      {
+        "name": "Environmental conditions",
+        "weight_pct": 25,
+        "value": 0.4
+      },
+      {
+        "name": "Production deviation",
+        "weight_pct": 20,
+        "value": 0.32
+      },
+      {
+        "name": "Operational delays",
+        "weight_pct": 15,
+        "value": 0.28
+      }
+    ]
+  },
+  {
+    "mine_id": "mine_009",
+    "factors": [
+      {
+        "name": "Equipment downtime",
+        "weight_pct": 20,
+        "value": 0.56
+      },
+      {
+        "name": "Environmental conditions",
+        "weight_pct": 40,
+        "value": 0.67
+      },
+      {
+        "name": "Production deviation",
+        "weight_pct": 15,
+        "value": 0.53
+      },
+      {
+        "name": "Operational delays",
+        "weight_pct": 25,
+        "value": 0.26
+      }
+    ]
+  },
+  {
+    "mine_id": "mine_010",
+    "factors": [
+      {
+        "name": "Equipment downtime",
+        "weight_pct": 40,
+        "value": 0.69
+      },
+      {
+        "name": "Environmental conditions",
+        "weight_pct": 20,
+        "value": 0.61
+      },
+      {
+        "name": "Production deviation",
+        "weight_pct": 25,
+        "value": 0.31
+      },
+      {
+        "name": "Operational delays",
+        "weight_pct": 15,
+        "value": 0.35
+      }
+    ]
+  },
+  {
+    "mine_id": "mine_011",
+    "factors": [
+      {
+        "name": "Equipment downtime",
+        "weight_pct": 25,
+        "value": 0.3
+      },
+      {
+        "name": "Environmental conditions",
+        "weight_pct": 15,
+        "value": 0.69
+      },
+      {
+        "name": "Production deviation",
+        "weight_pct": 40,
+        "value": 0.45
+      },
+      {
+        "name": "Operational delays",
+        "weight_pct": 20,
+        "value": 0.53
+      }
+    ]
+  }
+]

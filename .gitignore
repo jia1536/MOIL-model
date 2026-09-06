@@ -1,0 +1,49 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# ---- Virtual environments ----
+venv/
+env/
+ENV/
+.venv/
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+
+# ---- Environment / secrets ----
+.env
+.env.local
+*.pem
+*.key
+
+# ---- OS junk ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Editor/IDE ----
+.vscode/
+.idea/
+*.swp
+
+# ---- Logs ----
+*.log
+
+# ---- Build artifacts ----
+build/
+dist/
+*.egg-info/
+
+# ---- Large model files (optional: uncomment if you'd rather host these separately) ----
+# *.pkl
+
+# ---- Node (only relevant if frontend/backend use npm) ----
+node_modules/
+npm-debug.log*
+
+# ---- Misc ----
+*.tmp
+*.bak

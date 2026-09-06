@@ -1,0 +1,146 @@
+[
+  {
+    "mine_id": "mine_001",
+    "period": "2026-Q1",
+    "planned_tonnes": 9236,
+    "forecast_tonnes": 7954,
+    "shortfall_pct": 13.9,
+    "risk_score": 43,
+    "risk_level": "Medium"
+  },
+  {
+    "mine_id": "mine_001",
+    "period": "2026-Q2",
+    "planned_tonnes": 8768,
+    "forecast_tonnes": 8448,
+    "shortfall_pct": 3.6,
+    "risk_score": 7,
+    "risk_level": "Low"
+  },
+  {
+    "mine_id": "mine_002",
+    "period": "2026-Q1",
+    "planned_tonnes": 3356,
+    "forecast_tonnes": 3129,
+    "shortfall_pct": 6.8,
+    "risk_score": 16,
+    "risk_level": "Low"
+  },
+  {
+    "mine_id": "mine_002",
+    "period": "2026-Q2",
+    "planned_tonnes": 3389,
+    "forecast_tonnes": 2658,
+    "shortfall_pct": 21.6,
+    "risk_score": 62,
+    "risk_level": "Medium"
+  },
+  {
+    "mine_id": "mine_005",
+    "period": "2026-Q1",
+    "planned_tonnes": 8519,
+    "forecast_tonnes": 7862,
+    "shortfall_pct": 7.7,
+    "risk_score": 22,
+    "risk_level": "Low"
+  },
+  {
+    "mine_id": "mine_005",
+    "period": "2026-Q2",
+    "planned_tonnes": 7916,
+    "forecast_tonnes": 6722,
+    "shortfall_pct": 15.1,
+    "risk_score": 43,
+    "risk_level": "Medium"
+  },
+  {
+    "mine_id": "mine_007",
+    "period": "2026-Q1",
+    "planned_tonnes": 6412,
+    "forecast_tonnes": 5650,
+    "shortfall_pct": 11.9,
+    "risk_score": 28,
+    "risk_level": "Low"
+  },
+  {
+    "mine_id": "mine_007",
+    "period": "2026-Q2",
+    "planned_tonnes": 6636,
+    "forecast_tonnes": 5556,
+    "shortfall_pct": 16.3,
+    "risk_score": 44,
+    "risk_level": "Medium"
+  },
+  {
+    "mine_id": "mine_008",
+    "period": "2026-Q1",
+    "planned_tonnes": 3911,
+    "forecast_tonnes": 3714,
+    "shortfall_pct": 5.0,
+    "risk_score": 13,
+    "risk_level": "Low"
+  },
+  {
+    "mine_id": "mine_008",
+    "period": "2026-Q2",
+    "planned_tonnes": 3832,
+    "forecast_tonnes": 2871,
+    "shortfall_pct": 25.1,
+    "risk_score": 70,
+    "risk_level": "High"
+  },
+  {
+    "mine_id": "mine_009",
+    "period": "2026-Q1",
+    "planned_tonnes": 6354,
+    "forecast_tonnes": 5543,
+    "shortfall_pct": 12.8,
+    "risk_score": 40,
+    "risk_level": "Medium"
+  },
+  {
+    "mine_id": "mine_009",
+    "period": "2026-Q2",
+    "planned_tonnes": 6428,
+    "forecast_tonnes": 5336,
+    "shortfall_pct": 17.0,
+    "risk_score": 50,
+    "risk_level": "Medium"
+  },
+  {
+    "mine_id": "mine_010",
+    "period": "2026-Q1",
+    "planned_tonnes": 6266,
+    "forecast_tonnes": 4951,
+    "shortfall_pct": 21.0,
+    "risk_score": 56,
+    "risk_level": "Medium"
+  },
+  {
+    "mine_id": "mine_010",
+    "period": "2026-Q2",
+    "planned_tonnes": 6468,
+    "forecast_tonnes": 5032,
+    "shortfall_pct": 22.2,
+    "risk_score": 61,
+    "risk_level": "Medium"
+  },
+  {
+    "mine_id": "mine_011",
+    "period": "2026-Q1",
+    "planned_tonnes": 9649,
+    "forecast_tonnes": 8293,
+    "shortfall_pct": 14.1,
+    "risk_score": 41,
+    "risk_level": "Medium"
+  },
+  {
+    "mine_id": "mine_011",
+    "period": "2026-Q2",
+    "planned_tonnes": 9277,
+    "forecast_tonnes": 7777,
+    "shortfall_pct": 16.2,
+    "risk_score": 43,
+    "risk_level": "Medium"
+  }
+]

@@ -1,0 +1,17 @@
+state,district,num_mines,mno2_tonnes,grade_46plus_tonnes,grade_35to46_tonnes,grade_25to35_tonnes,grade_below25_tonnes,total_quantity_tonnes,total_value_thousand_inr
+Andhra Pradesh,Vizianagaram,22,0,0,15140,52814,182301,250255,987075
+Karnataka,Ballari,1,0,420,51394,153446,84599,289859,2187931
+Karnataka,Chitradurga,2,0,0,0,0,18700,18700,21168
+Karnataka,Davanagere,4,0,0,0,8870,48740,57610,130217
+Karnataka,Tumakuru,2,0,0,0,60,4817,4877,7843
+Madhya Pradesh,Balaghat,33,0,101538,95420,317274,123610,637842,5045076
+Madhya Pradesh,Chhindwara,4,0,350,1954,2492,5294,10090,61325
+Madhya Pradesh,Jabalpur,5,0,0,0,0,217261,217261,517675
+Madhya Pradesh,Jhabua,1,0,0,472,48710,6772,55954,235400
+Maharashtra,Bhandara,5,13611,4907,243117,119918,13245,394798,4195977
+Maharashtra,Nagpur,21,0,19561,73559,126367,30199,249686,2327597
+Odisha,Keonjhar,17,608,123744,82285,90318,147360,444315,1968297
+Odisha,Rayagada,1,0,0,0,544,0,544,4241
+Odisha,Sundargarh,10,0,0,366,7323,30521,38210,162834
+Rajasthan,Banswara,1,0,0,0,6940,0,6940,20820
+Telangana,Adilabad,5,0,0,0,10497,600,11097,69120
