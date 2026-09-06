@@ -1,9 +1,5 @@
 # SIH26009 — Manganese Prospectivity & Production Forecasting (ML Pipeline)
 
-This repo contains my individual ML/data contribution to **Smart India Hackathon 2026**, for Problem Statement **SIH26009**: *"Using AI/ML and Space Technology to Identify Manganese Reserves and Overcome Production Shortfalls"* (MOIL Limited / Ministry of Steel).
-
-> This is a personal portfolio copy of my contribution. The full team submission, including frontend and backend, lives at the team repo: **[Rounak-T/sih26009_prototype](https://github.com/Rounak-T/sih26009_prototype)**
-
 ---
 
 ## What's in this repo
