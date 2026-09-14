@@ -1,0 +1,50 @@
+[
+  {
+    "mine_id": "mine_001",
+    "risk_level": "Medium",
+    "primary_cause": "Production deviation",
+    "recommendation": "Audit planning assumptions against last 4 quarters of actuals and recalibrate quarterly targets."
+  },
+  {
+    "mine_id": "mine_002",
+    "risk_level": "Low",
+    "primary_cause": "Equipment downtime",
+    "recommendation": "Schedule preventive maintenance for the excavation fleet and redistribute workload across operational units."
+  },
+  {
+    "mine_id": "mine_005",
+    "risk_level": "Low",
+    "primary_cause": "Equipment downtime",
+    "recommendation": "Schedule preventive maintenance for the excavation fleet and redistribute workload across operational units."
+  },
+  {
+    "mine_id": "mine_007",
+    "risk_level": "Low",
+    "primary_cause": "Environmental conditions",
+    "recommendation": "Build seasonal buffer into production targets during monsoon months and monitor rainfall-linked haul road access."
+  },
+  {
+    "mine_id": "mine_008",
+    "risk_level": "Low",
+    "primary_cause": "Equipment downtime",
+    "recommendation": "Schedule preventive maintenance for the excavation fleet and redistribute workload across operational units."
+  },
+  {
+    "mine_id": "mine_009",
+    "risk_level": "Medium",
+    "primary_cause": "Environmental conditions",
+    "recommendation": "Build seasonal buffer into production targets during monsoon months and monitor rainfall-linked haul road access."
+  },
+  {
+    "mine_id": "mine_010",
+    "risk_level": "Medium",
+    "primary_cause": "Equipment downtime",
+    "recommendation": "Schedule preventive maintenance for the excavation fleet and redistribute workload across operational units."
+  },
+  {
+    "mine_id": "mine_011",
+    "risk_level": "Medium",
+    "primary_cause": "Production deviation",
+    "recommendation": "Audit planning assumptions against last 4 quarters of actuals and recalibrate quarterly targets."
+  }
+]

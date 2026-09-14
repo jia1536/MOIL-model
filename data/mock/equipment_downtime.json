@@ -1,0 +1,1010 @@
+[
+  {
+    "mine_id": "mine_001",
+    "equipment_id": "eq_001_01",
+    "period": "2024-Q3",
+    "downtime_hours": 145
+  },
+  {
+    "mine_id": "mine_001",
+    "equipment_id": "eq_001_01",
+    "period": "2024-Q4",
+    "downtime_hours": 175
+  },
+  {
+    "mine_id": "mine_001",
+    "equipment_id": "eq_001_01",
+    "period": "2025-Q1",
+    "downtime_hours": 17
+  },
+  {
+    "mine_id": "mine_001",
+    "equipment_id": "eq_001_01",
+    "period": "2025-Q2",
+    "downtime_hours": 14
+  },
+  {
+    "mine_id": "mine_001",
+    "equipment_id": "eq_001_01",
+    "period": "2025-Q3",
+    "downtime_hours": 47
+  },
+  {
+    "mine_id": "mine_001",
+    "equipment_id": "eq_001_01",
+    "period": "2025-Q4",
+    "downtime_hours": 47
+  },
+  {
+    "mine_id": "mine_001",
+    "equipment_id": "eq_001_02",
+    "period": "2024-Q3",
+    "downtime_hours": 50
+  },
+  {
+    "mine_id": "mine_001",
+    "equipment_id": "eq_001_02",
+    "period": "2024-Q4",
+    "downtime_hours": 14
+  },
+  {
+    "mine_id": "mine_001",
+    "equipment_id": "eq_001_02",
+    "period": "2025-Q1",
+    "downtime_hours": 31
+  },
+  {
+    "mine_id": "mine_001",
+    "equipment_id": "eq_001_02",
+    "period": "2025-Q2",
+    "downtime_hours": 145
+  },
+  {
+    "mine_id": "mine_001",
+    "equipment_id": "eq_001_02",
+    "period": "2025-Q3",
+    "downtime_hours": 23
+  },
+  {
+    "mine_id": "mine_001",
+    "equipment_id": "eq_001_02",
+    "period": "2025-Q4",
+    "downtime_hours": 179
+  },
+  {
+    "mine_id": "mine_001",
+    "equipment_id": "eq_001_03",
+    "period": "2024-Q3",
+    "downtime_hours": 163
+  },
+  {
+    "mine_id": "mine_001",
+    "equipment_id": "eq_001_03",
+    "period": "2024-Q4",
+    "downtime_hours": 22
+  },
+  {
+    "mine_id": "mine_001",
+    "equipment_id": "eq_001_03",
+    "period": "2025-Q1",
+    "downtime_hours": 115
+  },
+  {
+    "mine_id": "mine_001",
+    "equipment_id": "eq_001_03",
+    "period": "2025-Q2",
+    "downtime_hours": 112
+  },
+  {
+    "mine_id": "mine_001",
+    "equipment_id": "eq_001_03",
+    "period": "2025-Q3",
+    "downtime_hours": 56
+  },
+  {
+    "mine_id": "mine_001",
+    "equipment_id": "eq_001_03",
+    "period": "2025-Q4",
+    "downtime_hours": 111
+  },
+  {
+    "mine_id": "mine_002",
+    "equipment_id": "eq_002_01",
+    "period": "2024-Q3",
+    "downtime_hours": 128
+  },
+  {
+    "mine_id": "mine_002",
+    "equipment_id": "eq_002_01",
+    "period": "2024-Q4",
+    "downtime_hours": 18
+  },
+  {
+    "mine_id": "mine_002",
+    "equipment_id": "eq_002_01",
+    "period": "2025-Q1",
+    "downtime_hours": 27
+  },
+  {
+    "mine_id": "mine_002",
+    "equipment_id": "eq_002_01",
+    "period": "2025-Q2",
+    "downtime_hours": 14
+  },
+  {
+    "mine_id": "mine_002",
+    "equipment_id": "eq_002_01",
+    "period": "2025-Q3",
+    "downtime_hours": 13
+  },
+  {
+    "mine_id": "mine_002",
+    "equipment_id": "eq_002_01",
+    "period": "2025-Q4",
+    "downtime_hours": 15
+  },
+  {
+    "mine_id": "mine_002",
+    "equipment_id": "eq_002_02",
+    "period": "2024-Q3",
+    "downtime_hours": 41
+  },
+  {
+    "mine_id": "mine_002",
+    "equipment_id": "eq_002_02",
+    "period": "2024-Q4",
+    "downtime_hours": 35
+  },
+  {
+    "mine_id": "mine_002",
+    "equipment_id": "eq_002_02",
+    "period": "2025-Q1",
+    "downtime_hours": 20
+  },
+  {
+    "mine_id": "mine_002",
+    "equipment_id": "eq_002_02",
+    "period": "2025-Q2",
+    "downtime_hours": 93
+  },
+  {
+    "mine_id": "mine_002",
+    "equipment_id": "eq_002_02",
+    "period": "2025-Q3",
+    "downtime_hours": 114
+  },
+  {
+    "mine_id": "mine_002",
+    "equipment_id": "eq_002_02",
+    "period": "2025-Q4",
+    "downtime_hours": 84
+  },
+  {
+    "mine_id": "mine_002",
+    "equipment_id": "eq_002_03",
+    "period": "2024-Q3",
+    "downtime_hours": 13
+  },
+  {
+    "mine_id": "mine_002",
+    "equipment_id": "eq_002_03",
+    "period": "2024-Q4",
+    "downtime_hours": 57
+  },
+  {
+    "mine_id": "mine_002",
+    "equipment_id": "eq_002_03",
+    "period": "2025-Q1",
+    "downtime_hours": 134
+  },
+  {
+    "mine_id": "mine_002",
+    "equipment_id": "eq_002_03",
+    "period": "2025-Q2",
+    "downtime_hours": 42
+  },
+  {
+    "mine_id": "mine_002",
+    "equipment_id": "eq_002_03",
+    "period": "2025-Q3",
+    "downtime_hours": 13
+  },
+  {
+    "mine_id": "mine_002",
+    "equipment_id": "eq_002_03",
+    "period": "2025-Q4",
+    "downtime_hours": 21
+  },
+  {
+    "mine_id": "mine_005",
+    "equipment_id": "eq_005_01",
+    "period": "2024-Q3",
+    "downtime_hours": 46
+  },
+  {
+    "mine_id": "mine_005",
+    "equipment_id": "eq_005_01",
+    "period": "2024-Q4",
+    "downtime_hours": 70
+  },
+  {
+    "mine_id": "mine_005",
+    "equipment_id": "eq_005_01",
+    "period": "2025-Q1",
+    "downtime_hours": 134
+  },
+  {
+    "mine_id": "mine_005",
+    "equipment_id": "eq_005_01",
+    "period": "2025-Q2",
+    "downtime_hours": 86
+  },
+  {
+    "mine_id": "mine_005",
+    "equipment_id": "eq_005_01",
+    "period": "2025-Q3",
+    "downtime_hours": 93
+  },
+  {
+    "mine_id": "mine_005",
+    "equipment_id": "eq_005_01",
+    "period": "2025-Q4",
+    "downtime_hours": 145
+  },
+  {
+    "mine_id": "mine_005",
+    "equipment_id": "eq_005_02",
+    "period": "2024-Q3",
+    "downtime_hours": 58
+  },
+  {
+    "mine_id": "mine_005",
+    "equipment_id": "eq_005_02",
+    "period": "2024-Q4",
+    "downtime_hours": 10
+  },
+  {
+    "mine_id": "mine_005",
+    "equipment_id": "eq_005_02",
+    "period": "2025-Q1",
+    "downtime_hours": 14
+  },
+  {
+    "mine_id": "mine_005",
+    "equipment_id": "eq_005_02",
+    "period": "2025-Q2",
+    "downtime_hours": 42
+  },
+  {
+    "mine_id": "mine_005",
+    "equipment_id": "eq_005_02",
+    "period": "2025-Q3",
+    "downtime_hours": 32
+  },
+  {
+    "mine_id": "mine_005",
+    "equipment_id": "eq_005_02",
+    "period": "2025-Q4",
+    "downtime_hours": 107
+  },
+  {
+    "mine_id": "mine_005",
+    "equipment_id": "eq_005_03",
+    "period": "2024-Q3",
+    "downtime_hours": 150
+  },
+  {
+    "mine_id": "mine_005",
+    "equipment_id": "eq_005_03",
+    "period": "2024-Q4",
+    "downtime_hours": 49
+  },
+  {
+    "mine_id": "mine_005",
+    "equipment_id": "eq_005_03",
+    "period": "2025-Q1",
+    "downtime_hours": 164
+  },
+  {
+    "mine_id": "mine_005",
+    "equipment_id": "eq_005_03",
+    "period": "2025-Q2",
+    "downtime_hours": 52
+  },
+  {
+    "mine_id": "mine_005",
+    "equipment_id": "eq_005_03",
+    "period": "2025-Q3",
+    "downtime_hours": 26
+  },
+  {
+    "mine_id": "mine_005",
+    "equipment_id": "eq_005_03",
+    "period": "2025-Q4",
+    "downtime_hours": 57
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_01",
+    "period": "2024-Q3",
+    "downtime_hours": 151
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_01",
+    "period": "2024-Q4",
+    "downtime_hours": 147
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_01",
+    "period": "2025-Q1",
+    "downtime_hours": 122
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_01",
+    "period": "2025-Q2",
+    "downtime_hours": 71
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_01",
+    "period": "2025-Q3",
+    "downtime_hours": 27
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_01",
+    "period": "2025-Q4",
+    "downtime_hours": 31
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_02",
+    "period": "2024-Q3",
+    "downtime_hours": 80
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_02",
+    "period": "2024-Q4",
+    "downtime_hours": 150
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_02",
+    "period": "2025-Q1",
+    "downtime_hours": 45
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_02",
+    "period": "2025-Q2",
+    "downtime_hours": 14
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_02",
+    "period": "2025-Q3",
+    "downtime_hours": 64
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_02",
+    "period": "2025-Q4",
+    "downtime_hours": 47
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_03",
+    "period": "2024-Q3",
+    "downtime_hours": 99
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_03",
+    "period": "2024-Q4",
+    "downtime_hours": 60
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_03",
+    "period": "2025-Q1",
+    "downtime_hours": 32
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_03",
+    "period": "2025-Q2",
+    "downtime_hours": 73
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_03",
+    "period": "2025-Q3",
+    "downtime_hours": 131
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_03",
+    "period": "2025-Q4",
+    "downtime_hours": 49
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_04",
+    "period": "2024-Q3",
+    "downtime_hours": 25
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_04",
+    "period": "2024-Q4",
+    "downtime_hours": 172
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_04",
+    "period": "2025-Q1",
+    "downtime_hours": 82
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_04",
+    "period": "2025-Q2",
+    "downtime_hours": 179
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_04",
+    "period": "2025-Q3",
+    "downtime_hours": 52
+  },
+  {
+    "mine_id": "mine_007",
+    "equipment_id": "eq_007_04",
+    "period": "2025-Q4",
+    "downtime_hours": 27
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_01",
+    "period": "2024-Q3",
+    "downtime_hours": 40
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_01",
+    "period": "2024-Q4",
+    "downtime_hours": 104
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_01",
+    "period": "2025-Q1",
+    "downtime_hours": 60
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_01",
+    "period": "2025-Q2",
+    "downtime_hours": 24
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_01",
+    "period": "2025-Q3",
+    "downtime_hours": 102
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_01",
+    "period": "2025-Q4",
+    "downtime_hours": 158
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_02",
+    "period": "2024-Q3",
+    "downtime_hours": 111
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_02",
+    "period": "2024-Q4",
+    "downtime_hours": 74
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_02",
+    "period": "2025-Q1",
+    "downtime_hours": 134
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_02",
+    "period": "2025-Q2",
+    "downtime_hours": 73
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_02",
+    "period": "2025-Q3",
+    "downtime_hours": 153
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_02",
+    "period": "2025-Q4",
+    "downtime_hours": 37
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_03",
+    "period": "2024-Q3",
+    "downtime_hours": 84
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_03",
+    "period": "2024-Q4",
+    "downtime_hours": 150
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_03",
+    "period": "2025-Q1",
+    "downtime_hours": 10
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_03",
+    "period": "2025-Q2",
+    "downtime_hours": 33
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_03",
+    "period": "2025-Q3",
+    "downtime_hours": 177
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_03",
+    "period": "2025-Q4",
+    "downtime_hours": 49
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_04",
+    "period": "2024-Q3",
+    "downtime_hours": 124
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_04",
+    "period": "2024-Q4",
+    "downtime_hours": 112
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_04",
+    "period": "2025-Q1",
+    "downtime_hours": 149
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_04",
+    "period": "2025-Q2",
+    "downtime_hours": 45
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_04",
+    "period": "2025-Q3",
+    "downtime_hours": 145
+  },
+  {
+    "mine_id": "mine_008",
+    "equipment_id": "eq_008_04",
+    "period": "2025-Q4",
+    "downtime_hours": 53
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_01",
+    "period": "2024-Q3",
+    "downtime_hours": 98
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_01",
+    "period": "2024-Q4",
+    "downtime_hours": 115
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_01",
+    "period": "2025-Q1",
+    "downtime_hours": 116
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_01",
+    "period": "2025-Q2",
+    "downtime_hours": 87
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_01",
+    "period": "2025-Q3",
+    "downtime_hours": 60
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_01",
+    "period": "2025-Q4",
+    "downtime_hours": 70
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_02",
+    "period": "2024-Q3",
+    "downtime_hours": 139
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_02",
+    "period": "2024-Q4",
+    "downtime_hours": 15
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_02",
+    "period": "2025-Q1",
+    "downtime_hours": 53
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_02",
+    "period": "2025-Q2",
+    "downtime_hours": 22
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_02",
+    "period": "2025-Q3",
+    "downtime_hours": 91
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_02",
+    "period": "2025-Q4",
+    "downtime_hours": 49
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_03",
+    "period": "2024-Q3",
+    "downtime_hours": 50
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_03",
+    "period": "2024-Q4",
+    "downtime_hours": 149
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_03",
+    "period": "2025-Q1",
+    "downtime_hours": 41
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_03",
+    "period": "2025-Q2",
+    "downtime_hours": 19
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_03",
+    "period": "2025-Q3",
+    "downtime_hours": 58
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_03",
+    "period": "2025-Q4",
+    "downtime_hours": 59
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_04",
+    "period": "2024-Q3",
+    "downtime_hours": 126
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_04",
+    "period": "2024-Q4",
+    "downtime_hours": 13
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_04",
+    "period": "2025-Q1",
+    "downtime_hours": 17
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_04",
+    "period": "2025-Q2",
+    "downtime_hours": 145
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_04",
+    "period": "2025-Q3",
+    "downtime_hours": 174
+  },
+  {
+    "mine_id": "mine_009",
+    "equipment_id": "eq_009_04",
+    "period": "2025-Q4",
+    "downtime_hours": 164
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_01",
+    "period": "2024-Q3",
+    "downtime_hours": 170
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_01",
+    "period": "2024-Q4",
+    "downtime_hours": 38
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_01",
+    "period": "2025-Q1",
+    "downtime_hours": 95
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_01",
+    "period": "2025-Q2",
+    "downtime_hours": 90
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_01",
+    "period": "2025-Q3",
+    "downtime_hours": 69
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_01",
+    "period": "2025-Q4",
+    "downtime_hours": 94
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_02",
+    "period": "2024-Q3",
+    "downtime_hours": 44
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_02",
+    "period": "2024-Q4",
+    "downtime_hours": 89
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_02",
+    "period": "2025-Q1",
+    "downtime_hours": 54
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_02",
+    "period": "2025-Q2",
+    "downtime_hours": 113
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_02",
+    "period": "2025-Q3",
+    "downtime_hours": 129
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_02",
+    "period": "2025-Q4",
+    "downtime_hours": 36
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_03",
+    "period": "2024-Q3",
+    "downtime_hours": 34
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_03",
+    "period": "2024-Q4",
+    "downtime_hours": 133
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_03",
+    "period": "2025-Q1",
+    "downtime_hours": 60
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_03",
+    "period": "2025-Q2",
+    "downtime_hours": 156
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_03",
+    "period": "2025-Q3",
+    "downtime_hours": 36
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_03",
+    "period": "2025-Q4",
+    "downtime_hours": 88
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_04",
+    "period": "2024-Q3",
+    "downtime_hours": 109
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_04",
+    "period": "2024-Q4",
+    "downtime_hours": 146
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_04",
+    "period": "2025-Q1",
+    "downtime_hours": 81
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_04",
+    "period": "2025-Q2",
+    "downtime_hours": 18
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_04",
+    "period": "2025-Q3",
+    "downtime_hours": 35
+  },
+  {
+    "mine_id": "mine_010",
+    "equipment_id": "eq_010_04",
+    "period": "2025-Q4",
+    "downtime_hours": 142
+  },
+  {
+    "mine_id": "mine_011",
+    "equipment_id": "eq_011_01",
+    "period": "2024-Q3",
+    "downtime_hours": 66
+  },
+  {
+    "mine_id": "mine_011",
+    "equipment_id": "eq_011_01",
+    "period": "2024-Q4",
+    "downtime_hours": 34
+  },
+  {
+    "mine_id": "mine_011",
+    "equipment_id": "eq_011_01",
+    "period": "2025-Q1",
+    "downtime_hours": 101
+  },
+  {
+    "mine_id": "mine_011",
+    "equipment_id": "eq_011_01",
+    "period": "2025-Q2",
+    "downtime_hours": 172
+  },
+  {
+    "mine_id": "mine_011",
+    "equipment_id": "eq_011_01",
+    "period": "2025-Q3",
+    "downtime_hours": 156
+  },
+  {
+    "mine_id": "mine_011",
+    "equipment_id": "eq_011_01",
+    "period": "2025-Q4",
+    "downtime_hours": 26
+  },
+  {
+    "mine_id": "mine_011",
+    "equipment_id": "eq_011_02",
+    "period": "2024-Q3",
+    "downtime_hours": 57
+  },
+  {
+    "mine_id": "mine_011",
+    "equipment_id": "eq_011_02",
+    "period": "2024-Q4",
+    "downtime_hours": 32
+  },
+  {
+    "mine_id": "mine_011",
+    "equipment_id": "eq_011_02",
+    "period": "2025-Q1",
+    "downtime_hours": 59
+  },
+  {
+    "mine_id": "mine_011",
+    "equipment_id": "eq_011_02",
+    "period": "2025-Q2",
+    "downtime_hours": 58
+  },
+  {
+    "mine_id": "mine_011",
+    "equipment_id": "eq_011_02",
+    "period": "2025-Q3",
+    "downtime_hours": 22
+  },
+  {
+    "mine_id": "mine_011",
+    "equipment_id": "eq_011_02",
+    "period": "2025-Q4",
+    "downtime_hours": 49
+  },
+  {
+    "mine_id": "mine_011",
+    "equipment_id": "eq_011_03",
+    "period": "2024-Q3",
+    "downtime_hours": 52
+  },
+  {
+    "mine_id": "mine_011",
+    "equipment_id": "eq_011_03",
+    "period": "2024-Q4",
+    "downtime_hours": 149
+  },
+  {
+    "mine_id": "mine_011",
+    "equipment_id": "eq_011_03",
+    "period": "2025-Q1",
+    "downtime_hours": 59
+  },
+  {
+    "mine_id": "mine_011",
+    "equipment_id": "eq_011_03",
+    "period": "2025-Q2",
+    "downtime_hours": 48
+  },
+  {
+    "mine_id": "mine_011",
+    "equipment_id": "eq_011_03",
+    "period": "2025-Q3",
+    "downtime_hours": 59
+  },
+  {
+    "mine_id": "mine_011",
+    "equipment_id": "eq_011_03",
+    "period": "2025-Q4",
+    "downtime_hours": 29
+  }
+]

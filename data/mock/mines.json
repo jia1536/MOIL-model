@@ -1,0 +1,110 @@
+[
+  {
+    "id": "mine_001",
+    "name": "Balaghat Manganese Block",
+    "state": "Madhya Pradesh",
+    "lat": 21.8,
+    "lng": 80.18,
+    "status": "active",
+    "type": "existing_mine"
+  },
+  {
+    "id": "mine_002",
+    "name": "Ukwa Manganese Mine",
+    "state": "Madhya Pradesh",
+    "lat": 21.75,
+    "lng": 80.1,
+    "status": "active",
+    "type": "existing_mine"
+  },
+  {
+    "id": "mine_003",
+    "name": "Chhindwara Manganese Block",
+    "state": "Madhya Pradesh",
+    "lat": 22.06,
+    "lng": 78.94,
+    "status": "prospective",
+    "type": "prospective_block"
+  },
+  {
+    "id": "mine_004",
+    "name": "Jhabua Manganese Block",
+    "state": "Madhya Pradesh",
+    "lat": 22.77,
+    "lng": 74.59,
+    "status": "prospective",
+    "type": "prospective_block"
+  },
+  {
+    "id": "mine_005",
+    "name": "Keonjhar Manganese Belt",
+    "state": "Odisha",
+    "lat": 21.63,
+    "lng": 85.58,
+    "status": "active",
+    "type": "existing_mine"
+  },
+  {
+    "id": "mine_006",
+    "name": "Bonai Manganese Block",
+    "state": "Odisha",
+    "lat": 21.85,
+    "lng": 84.9,
+    "status": "prospective",
+    "type": "prospective_block"
+  },
+  {
+    "id": "mine_007",
+    "name": "Nagpur Manganese Mine",
+    "state": "Maharashtra",
+    "lat": 21.15,
+    "lng": 79.09,
+    "status": "active",
+    "type": "existing_mine"
+  },
+  {
+    "id": "mine_008",
+    "name": "Bhandara Manganese Block",
+    "state": "Maharashtra",
+    "lat": 21.17,
+    "lng": 79.65,
+    "status": "active",
+    "type": "existing_mine"
+  },
+  {
+    "id": "mine_009",
+    "name": "Shimoga Manganese Mine",
+    "state": "Karnataka",
+    "lat": 13.93,
+    "lng": 75.57,
+    "status": "active",
+    "type": "existing_mine"
+  },
+  {
+    "id": "mine_010",
+    "name": "Sandur Manganese Block",
+    "state": "Karnataka",
+    "lat": 15.09,
+    "lng": 76.53,
+    "status": "active",
+    "type": "existing_mine"
+  },
+  {
+    "id": "mine_011",
+    "name": "Srikakulam Manganese Mine",
+    "state": "Andhra Pradesh",
+    "lat": 18.3,
+    "lng": 83.9,
+    "status": "active",
+    "type": "existing_mine"
+  },
+  {
+    "id": "mine_012",
+    "name": "Vizianagaram Manganese Block",
+    "state": "Andhra Pradesh",
+    "lat": 18.12,
+    "lng": 83.41,
+    "status": "prospective",
+    "type": "prospective_block"
+  }
+]

@@ -1,0 +1,290 @@
+[
+  {
+    "mine_id": "mine_001",
+    "period": "2024-Q3",
+    "planned_tonnes": 13355,
+    "actual_tonnes": 12286
+  },
+  {
+    "mine_id": "mine_001",
+    "period": "2024-Q4",
+    "planned_tonnes": 12505,
+    "actual_tonnes": 12129
+  },
+  {
+    "mine_id": "mine_001",
+    "period": "2025-Q1",
+    "planned_tonnes": 12213,
+    "actual_tonnes": 11602
+  },
+  {
+    "mine_id": "mine_001",
+    "period": "2025-Q2",
+    "planned_tonnes": 11688,
+    "actual_tonnes": 8068
+  },
+  {
+    "mine_id": "mine_001",
+    "period": "2025-Q3",
+    "planned_tonnes": 8430,
+    "actual_tonnes": 8177
+  },
+  {
+    "mine_id": "mine_001",
+    "period": "2025-Q4",
+    "planned_tonnes": 8451,
+    "actual_tonnes": 7436
+  },
+  {
+    "mine_id": "mine_002",
+    "period": "2024-Q3",
+    "planned_tonnes": 8541,
+    "actual_tonnes": 5666
+  },
+  {
+    "mine_id": "mine_002",
+    "period": "2024-Q4",
+    "planned_tonnes": 5791,
+    "actual_tonnes": 4137
+  },
+  {
+    "mine_id": "mine_002",
+    "period": "2025-Q1",
+    "planned_tonnes": 4170,
+    "actual_tonnes": 3669
+  },
+  {
+    "mine_id": "mine_002",
+    "period": "2025-Q2",
+    "planned_tonnes": 3917,
+    "actual_tonnes": 3721
+  },
+  {
+    "mine_id": "mine_002",
+    "period": "2025-Q3",
+    "planned_tonnes": 3938,
+    "actual_tonnes": 3150
+  },
+  {
+    "mine_id": "mine_002",
+    "period": "2025-Q4",
+    "planned_tonnes": 3169,
+    "actual_tonnes": 2200
+  },
+  {
+    "mine_id": "mine_005",
+    "period": "2024-Q3",
+    "planned_tonnes": 11468,
+    "actual_tonnes": 10894
+  },
+  {
+    "mine_id": "mine_005",
+    "period": "2024-Q4",
+    "planned_tonnes": 11470,
+    "actual_tonnes": 10896
+  },
+  {
+    "mine_id": "mine_005",
+    "period": "2025-Q1",
+    "planned_tonnes": 11641,
+    "actual_tonnes": 9312
+  },
+  {
+    "mine_id": "mine_005",
+    "period": "2025-Q2",
+    "planned_tonnes": 9519,
+    "actual_tonnes": 8376
+  },
+  {
+    "mine_id": "mine_005",
+    "period": "2025-Q3",
+    "planned_tonnes": 8484,
+    "actual_tonnes": 7465
+  },
+  {
+    "mine_id": "mine_005",
+    "period": "2025-Q4",
+    "planned_tonnes": 7884,
+    "actual_tonnes": 7489
+  },
+  {
+    "mine_id": "mine_007",
+    "period": "2024-Q3",
+    "planned_tonnes": 13649,
+    "actual_tonnes": 12557
+  },
+  {
+    "mine_id": "mine_007",
+    "period": "2024-Q4",
+    "planned_tonnes": 12721,
+    "actual_tonnes": 12339
+  },
+  {
+    "mine_id": "mine_007",
+    "period": "2025-Q1",
+    "planned_tonnes": 12555,
+    "actual_tonnes": 11927
+  },
+  {
+    "mine_id": "mine_007",
+    "period": "2025-Q2",
+    "planned_tonnes": 12145,
+    "actual_tonnes": 7861
+  },
+  {
+    "mine_id": "mine_007",
+    "period": "2025-Q3",
+    "planned_tonnes": 8029,
+    "actual_tonnes": 5952
+  },
+  {
+    "mine_id": "mine_007",
+    "period": "2025-Q4",
+    "planned_tonnes": 6369,
+    "actual_tonnes": 5095
+  },
+  {
+    "mine_id": "mine_008",
+    "period": "2024-Q3",
+    "planned_tonnes": 12036,
+    "actual_tonnes": 11073
+  },
+  {
+    "mine_id": "mine_008",
+    "period": "2024-Q4",
+    "planned_tonnes": 11307,
+    "actual_tonnes": 7736
+  },
+  {
+    "mine_id": "mine_008",
+    "period": "2025-Q1",
+    "planned_tonnes": 7898,
+    "actual_tonnes": 7661
+  },
+  {
+    "mine_id": "mine_008",
+    "period": "2025-Q2",
+    "planned_tonnes": 7905,
+    "actual_tonnes": 5925
+  },
+  {
+    "mine_id": "mine_008",
+    "period": "2025-Q3",
+    "planned_tonnes": 6166,
+    "actual_tonnes": 3743
+  },
+  {
+    "mine_id": "mine_008",
+    "period": "2025-Q4",
+    "planned_tonnes": 3775,
+    "actual_tonnes": 3020
+  },
+  {
+    "mine_id": "mine_009",
+    "period": "2024-Q3",
+    "planned_tonnes": 12950,
+    "actual_tonnes": 10360
+  },
+  {
+    "mine_id": "mine_009",
+    "period": "2024-Q4",
+    "planned_tonnes": 10798,
+    "actual_tonnes": 10258
+  },
+  {
+    "mine_id": "mine_009",
+    "period": "2025-Q1",
+    "planned_tonnes": 10816,
+    "actual_tonnes": 7925
+  },
+  {
+    "mine_id": "mine_009",
+    "period": "2025-Q2",
+    "planned_tonnes": 8401,
+    "actual_tonnes": 7392
+  },
+  {
+    "mine_id": "mine_009",
+    "period": "2025-Q3",
+    "planned_tonnes": 7457,
+    "actual_tonnes": 5965
+  },
+  {
+    "mine_id": "mine_009",
+    "period": "2025-Q4",
+    "planned_tonnes": 5966,
+    "actual_tonnes": 5250
+  },
+  {
+    "mine_id": "mine_010",
+    "period": "2024-Q3",
+    "planned_tonnes": 12837,
+    "actual_tonnes": 12195
+  },
+  {
+    "mine_id": "mine_010",
+    "period": "2024-Q4",
+    "planned_tonnes": 13044,
+    "actual_tonnes": 9076
+  },
+  {
+    "mine_id": "mine_010",
+    "period": "2025-Q1",
+    "planned_tonnes": 9518,
+    "actual_tonnes": 6799
+  },
+  {
+    "mine_id": "mine_010",
+    "period": "2025-Q2",
+    "planned_tonnes": 7092,
+    "actual_tonnes": 6879
+  },
+  {
+    "mine_id": "mine_010",
+    "period": "2025-Q3",
+    "planned_tonnes": 7384,
+    "actual_tonnes": 5907
+  },
+  {
+    "mine_id": "mine_010",
+    "period": "2025-Q4",
+    "planned_tonnes": 5916,
+    "actual_tonnes": 5206
+  },
+  {
+    "mine_id": "mine_011",
+    "period": "2024-Q3",
+    "planned_tonnes": 10007,
+    "actual_tonnes": 9506
+  },
+  {
+    "mine_id": "mine_011",
+    "period": "2024-Q4",
+    "planned_tonnes": 9571,
+    "actual_tonnes": 9092
+  },
+  {
+    "mine_id": "mine_011",
+    "period": "2025-Q1",
+    "planned_tonnes": 9803,
+    "actual_tonnes": 9018
+  },
+  {
+    "mine_id": "mine_011",
+    "period": "2025-Q2",
+    "planned_tonnes": 9110,
+    "actual_tonnes": 8836
+  },
+  {
+    "mine_id": "mine_011",
+    "period": "2025-Q3",
+    "planned_tonnes": 8952,
+    "actual_tonnes": 8683
+  },
+  {
+    "mine_id": "mine_011",
+    "period": "2025-Q4",
+    "planned_tonnes": 8976,
+    "actual_tonnes": 6111
+  }
+]

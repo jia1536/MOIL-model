@@ -1,0 +1,12 @@
+[
+  {"name": "Balaghat Mine", "state": "Madhya Pradesh", "district": "Balaghat", "lat": 21.8081, "lng": 80.1857, "type": "underground", "confidence": "town-level approx", "note": "Largest MOIL mine, ~435m depth. Actual shaft is near Bharweli village."},
+  {"name": "Ukwa Mine", "state": "Madhya Pradesh", "district": "Balaghat", "lat": 21.9742, "lng": 80.4664, "type": "underground", "confidence": "precise (mindat.org)"},
+  {"name": "Tirodi Mine", "state": "Madhya Pradesh", "district": "Balaghat", "lat": 21.6764, "lng": 79.9985, "type": "opencast", "confidence": "town-level approx", "note": "Corrected: earlier listed as Maharashtra; official IBM inspection report confirms Balaghat district, MP."},
+  {"name": "Sitapatore Mine", "state": "Madhya Pradesh", "district": "Balaghat", "lat": 21.8500, "lng": 80.3500, "type": "opencast", "confidence": "low - approximate", "note": "One of 4 official Balaghat-constituency MOIL mines per steel.gov.in Lok Sabha answer."},
+  {"name": "Kandri Mine", "state": "Maharashtra", "district": "Nagpur", "lat": 21.1500, "lng": 79.1000, "type": "underground", "confidence": "town-level approx", "note": "Shaft depth ~245m"},
+  {"name": "Munsar (Mansar) Mine", "state": "Maharashtra", "district": "Nagpur", "lat": 21.3900, "lng": 79.2900, "type": "underground", "confidence": "town-level approx"},
+  {"name": "Gumgaon Mine", "state": "Maharashtra", "district": "Nagpur", "lat": 21.1000, "lng": 79.0500, "type": "underground", "confidence": "town-level approx", "note": "Shaft depth ~330m"},
+  {"name": "Chikla Mine", "state": "Maharashtra", "district": "Bhandara", "lat": 21.5500, "lng": 79.7556, "type": "underground", "confidence": "moderate (derived from historical journal DMS coords)", "note": "Shaft depth ~169m"},
+  {"name": "Dongri Buzurg Mine", "state": "Maharashtra", "district": "Bhandara", "lat": 21.5500, "lng": 79.7000, "type": "opencast", "confidence": "moderate (derived from historical journal DMS coords)", "note": "Produces MnO2 for battery industry; integrated beneficiation plant"},
+  {"name": "Beldongri Mine", "state": "Maharashtra", "district": "Bhandara", "lat": 21.2500, "lng": 79.7500, "type": "underground", "confidence": "low - approximate"}
+]
