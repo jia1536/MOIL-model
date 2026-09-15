@@ -27,6 +27,22 @@ export default function AIAnalysisPage({ selectedMine }) {
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [ndviLoading, setNdviLoading] = useState(false);
+  const [ndviSource, setNdviSource] = useState(null);
+
+  async function fetchRealNdvi() {
+    setNdviLoading(true);
+    setNdviSource(null);
+    try {
+      const res = await api.getRealNdvi(form.lat, form.lng);
+      setForm((s) => ({ ...s, ndvi: res.ndvi }));
+      setNdviSource(res.source);
+    } catch (e) {
+      setNdviSource("Failed to fetch — check backend has Earth Engine authenticated");
+    } finally {
+      setNdviLoading(false);
+    }
+  }
 
   async function runAnalysis() {
     setLoading(true);
@@ -88,6 +104,18 @@ export default function AIAnalysisPage({ selectedMine }) {
         <button onClick={runAnalysis} disabled={loading} style={{ background: "linear-gradient(135deg, #2563EB, #1D4ED8)", color: "white", padding: "11px 22px", boxShadow: "0 2px 8px rgba(37,99,235,0.35)", fontWeight: 600, fontSize: 13 }}>
           {loading ? "Running Analysis…" : "Run Analysis"}
         </button>
+        <button
+          onClick={fetchRealNdvi}
+          disabled={ndviLoading}
+          style={{ background: "white", color: "var(--accent-green)", border: "1px solid var(--accent-green)", padding: "10px 18px", fontWeight: 600, fontSize: 13, marginLeft: 10 }}
+        >
+          {ndviLoading ? "Fetching…" : "🛰️ Fetch real NDVI (Sentinel-2)"}
+        </button>
+        {ndviSource && (
+          <p style={{ fontSize: 11, color: ndviSource.startsWith("Failed") ? "var(--danger-red)" : "var(--accent-green)", marginTop: 8 }}>
+            {ndviSource}
+          </p>
+        )}
         {error && <p style={{ color: "var(--danger-red)", marginTop: 10, fontSize: 13 }}>{error}</p>}
       </div>
 

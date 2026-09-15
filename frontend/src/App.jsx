@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { LayoutDashboard, Map as MapIcon, Brain, FileBarChart, Lightbulb, Settings, Bell, Mountain, Layers, MapPin, TriangleAlert, Gem, UploadCloud } from "lucide-react";
+import { LayoutDashboard, Map as MapIcon, Brain, FileBarChart, Lightbulb, Settings, Bell, Mountain, Layers, MapPin, TriangleAlert, Gem } from "lucide-react";
 import { api } from "./api";
 import MineMap from "./components/MineMap";
 import ProductionChart from "./components/ProductionChart";
@@ -9,16 +9,15 @@ import StatCard from "./components/StatCard";
 import ProductionShortfallPage from "./components/ProductionShortfallPage";
 import AIAnalysisPage from "./components/AIAnalysisPage";
 import RecommendationsPage from "./components/RecommendationsPage";
-import UploadDataPage from "./components/UploadDataPage";
 import "./tokens.css";
 
 const NAV = [
   { label: "Dashboard", icon: LayoutDashboard },
   { label: "Map", icon: MapIcon },
+  { label: "AI Analysis", icon: Brain },
   { label: "Reports", icon: FileBarChart },
   { label: "Recommendations", icon: Lightbulb },
-  { label: "Upload Data", icon: UploadCloud },
-  { label: "AI Analysis", icon: Settings },
+  { label: "Settings", icon: Settings },
 ];
 
 export default function App() {
@@ -122,7 +121,7 @@ export default function App() {
             <div className="hero-banner" style={{ marginBottom: 24 }}>
               <h2 style={{ fontSize: 22, marginBottom: 6 }}>Manganese Reserve Intelligence</h2>
               <p style={{ color: "#CBD5E1", fontSize: 14, maxWidth: 520 }}>
-                A prototype dashboard for monitoring manganese mines and prospectivity zones, with AI-driven risk analysis and recommendations. 
+                Using AI/ML and space technology to identify manganese reserves and overcome production shortfalls — SIH26009.
               </p>
             </div>
 
@@ -202,12 +201,6 @@ export default function App() {
         {tab === "Recommendations" && (
           <main style={{ padding: 28, flex: 1 }}>
             <RecommendationsPage mines={mines} />
-          </main>
-        )}
-
-        {tab === "Upload Data" && (
-          <main style={{ padding: 28, flex: 1 }}>
-            <UploadDataPage />
           </main>
         )}
 

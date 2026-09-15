@@ -1,4 +1,4 @@
-const BASE = "http://127.0.0.1:8000";
+const BASE = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
 
 async function get(path) {
   const res = await fetch(`${BASE}${path}`);
@@ -16,24 +16,6 @@ async function post(path, body) {
   return res.json();
 }
 
-async function postFile(path, formData) {
-  const res = await fetch(`${BASE}${path}`, {
-    method: "POST",
-    body: formData, // no Content-Type header — browser sets the multipart boundary
-  });
-  if (!res.ok) {
-    let detail = `POST ${path} failed: ${res.status}`;
-    try {
-      const data = await res.json();
-      if (data.detail) detail = data.detail;
-    } catch {
-      // response wasn't JSON, fall back to the generic message above
-    }
-    throw new Error(detail);
-  }
-  return res.json();
-}
-
 export const api = {
   getMines: () => get("/api/mines"),
   getProduction: (mineId) => get(`/api/production${mineId ? `?mine_id=${mineId}` : ""}`),
@@ -46,9 +28,5 @@ export const api = {
   getMoilRealMines: () => get("/api/moil_real_mines"),
   predictProspectivity: (features) => post("/api/predict/prospectivity", features),
   predictForecast: (features) => post("/api/predict/forecast", features),
-  uploadProductionCSV: (file) => {
-    const formData = new FormData();
-    formData.append("file", file);
-    return postFile("/api/upload", formData);
-  },
+  getRealNdvi: (lat, lng) => get(`/api/satellite/ndvi?lat=${lat}&lng=${lng}`),
 };
