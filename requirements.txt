@@ -1,0 +1,16 @@
+# Core (matches your existing predict.py requirement exactly)
+scikit-learn==1.8.0
+joblib
+pandas
+numpy
+
+# New additions this session — routes, satellite, chatbot
+fastapi
+uvicorn
+earthengine-api
+openai          # used for Groq's OpenAI-compatible endpoint, free tier — not OpenAI itself
+
+# Optional — only needed if you wire in the CNN satellite-patch branch
+# (cnn_patch_model.py). Skip this line if you're not running that file;
+# torch is a large install and isn't required for the core pipeline.
+# torch

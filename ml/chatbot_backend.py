@@ -28,6 +28,9 @@ from openai import OpenAI
 from predict import predict_forecast
 from routes_map import score_zone
 from data_loader import MINES, find_mine_by_name, get_mine_operational_inputs, get_state_reserve_and_production
+from grade_lookup import get_grade_for_mine
+from companies_lookup import get_companies_for_mine
+from country_comparison import compare_countries as compare_countries_fn
 
 router = APIRouter()
 MODEL = "openai/gpt-oss-120b"  # llama-3.3-70b-versatile was decommissioned by Groq Aug 16 2026; this is their recommended replacement
@@ -104,6 +107,36 @@ TOOLS = [
             },
         },
     },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_grade_and_companies",
+            "description": (
+                "Get real ore grade breakdown (percent Mn content by weight) and "
+                "real operating companies for a named known mine, from IBM Yearbook data."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {"mine_name": {"type": "string"}},
+                "required": ["mine_name"],
+            },
+        },
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "compare_countries",
+            "description": (
+                "Compare India's real manganese reserves and production against other "
+                "countries (e.g. South Africa, Australia, China, Gabon, Brazil)."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {"countries": {"type": "array", "items": {"type": "string"}}},
+                "required": ["countries"],
+            },
+        },
+    },
 ]
 
 
@@ -116,7 +149,7 @@ def execute_tool(name: str, tool_input: dict) -> dict:
             "prospectivity_score": result["prospectivity"]["prospectivity_score"],
             "level": result["level"],
             "confidence": result["prospectivity"]["confidence"],
-            "reserve_range_tonnes": [result["prospectivity"]["reserve_min"], result["prospectivity"]["reserve_max"]],
+            "reserve_range_tonnes": [result["prospectivity"]["reserve_min_tonnes"], result["prospectivity"]["reserve_max_tonnes"]],
             "top_contributing_factors": result["top_features"],
             "nearest_known_mine": result["nearest_mine"],
             "viability_index": result["viability"]["viability_index"],
@@ -148,6 +181,19 @@ def execute_tool(name: str, tool_input: dict) -> dict:
             reserve, production = get_state_reserve_and_production(state)
             result[state] = {"remaining_reserve_tonnes": reserve, "annual_production_2020_21_tonnes": production}
         return result
+
+    if name == "get_grade_and_companies":
+        mine = find_mine_by_name(tool_input["mine_name"])
+        if not mine:
+            return {"error": f"No known mine matching '{tool_input['mine_name']}'"}
+        grade = get_grade_for_mine(mine["name"])
+        companies = get_companies_for_mine(mine["name"])
+        if not grade:
+            return {"error": f"No district-level grade/company data mapped for '{mine['name']}' yet"}
+        return {"mine": mine["name"], "grade": grade, "companies": companies}
+
+    if name == "compare_countries":
+        return compare_countries_fn(tool_input["countries"])
 
     return {"error": f"Unknown tool {name}"}
 
