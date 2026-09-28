@@ -60,7 +60,7 @@ export default function App() {
         const firstActive = m.find((x) => x.status === "active");
         if (firstActive) setSelectedMineId(firstActive.id);
       })
-      .catch(() => setLoadError("Could not reach the backend API at http://127.0.0.1:8000. Is it running?"));
+      .catch(() =>setLoadError( `Could not reach the backend API at ${BASE}. Is it running?`));
   }, []);
 
   useEffect(() => {
