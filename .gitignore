@@ -12,11 +12,18 @@ __pycache__/
 .venv/
 venv/
 
+# Generated /api/map/zones cache — can go stale silently if committed (it
+# doesn't know when a model or viability_index.py/site_attributes.py changed).
+# Run `python precompute_zones.py` (from backend/) after cloning, and again
+# any time you retrain a model, rather than committing this.
+backend/data/cache/
+
 # Environment
 .env
 .env.*
+!.env.example
 
 # OS
 .DS_Store
-# Large files
+Thumbs.db
 backend.zip

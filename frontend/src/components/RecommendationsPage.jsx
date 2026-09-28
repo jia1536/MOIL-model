@@ -34,7 +34,7 @@ export default function RecommendationsPage({ mines }) {
         <h3 style={{ fontSize: 16 }}>Recommendations</h3>
       </div>
       <p style={{ color: "var(--text-soft)", fontSize: 13, marginBottom: 20 }}>
-        AI-driven recommendations for exploration and production improvement, based on each mine's top risk factor.
+        Recommendations for exploration and production improvement, based on each mine's top risk factor.
       </p>
 
       {loading ? (

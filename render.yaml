@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: sih26009-backend
+    runtime: python
+    rootDir: backend
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.5
+      - key: GEE_PROJECT_ID
+        sync: false
+      - key: GEE_SERVICE_ACCOUNT_JSON
+        value: /etc/secrets/gee-key.json   # add the key as a Render "Secret File" named gee-key.json
+      - key: GROQ_API_KEY
+        sync: false
+      - key: FRONTEND_URL
+        sync: false                        # set to your Vercel URL after the frontend deploys

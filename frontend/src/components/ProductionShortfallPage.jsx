@@ -53,13 +53,13 @@ export default function ProductionShortfallPage({ mines, zones }) {
   function handleGenerateReport() {
     const lines = [
       "MANGANESE PRODUCTION SHORTFALL REPORT",
-      "SIH26009 — Manganese Intelligence Platform",
+      "SIH26009 Manganese Intelligence Platform",
       "=".repeat(50),
       "",
       "PRODUCTION SHORTFALL BY ZONE (kilotonnes)",
       ...chartData.map((r) => `  ${r.zone}: Current ${r.current} | Required ${r.required} | Gap ${r.gap}`),
       "",
-      "TOP POTENTIAL ZONES (from AI prospectivity model)",
+      "TOP POTENTIAL ZONES (from the prospectivity model)",
       ...topZones.map((z) => `  ${z.zone}: Est. reserve ${z.reserve} kt, confidence ${z.confidence}%`),
       "",
       `Overall coverage: ${coveragePct}% of required production currently met.`,
@@ -73,6 +73,10 @@ export default function ProductionShortfallPage({ mines, zones }) {
 
   return (
     <div>
+      <div style={{ marginBottom: 20 }}>
+        <ForecastTool />
+      </div>
+
       <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 20 }}>
         <div style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 12, padding: 20 }}>
           <h3 style={{ fontSize: 15, marginBottom: 4 }}>Production Shortfall Analysis</h3>
@@ -139,9 +143,6 @@ export default function ProductionShortfallPage({ mines, zones }) {
         </table>
       </div>
 
-      <div style={{ marginTop: 20 }}>
-        <ForecastTool />
-      </div>
     </div>
   );
 }

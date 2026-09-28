@@ -1,175 +1,191 @@
 import { useState } from "react";
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import { api } from "../api";
 
-// Real feature importances printed by train_prospectivity_v2.py during training —
-// not fabricated for display, these are the model's actual learned weights.
-const KEY_FACTORS = [
-  { name: "Geology (gondite-archean)", value: 46.4 },
-  { name: "Geology (archean)", value: 16.5 },
-  { name: "Magnetic anomaly", value: 5.8 },
-  { name: "NDVI (vegetation)", value: 4.8 },
-  { name: "Mn concentration (soil)", value: 4.6 },
-  { name: "Mineral alteration index", value: 3.6 },
-  { name: "Distance to fault", value: 2.3 },
-];
+const LEVEL_COLOR = {
+  "very high": "var(--danger-red)",
+  high: "var(--danger-red)",
+  medium: "var(--warning-orange)",
+  low: "var(--accent-green)",
+  "very low": "var(--accent-green)",
+};
 
-const GEOLOGY_OPTIONS = ["gondite_archean", "archean", "kodurite_archean", "laterite"];
-
-export default function AIAnalysisPage({ selectedMine }) {
-  const [form, setForm] = useState({
-    lat: selectedMine?.lat || 21.8, lng: selectedMine?.lng || 80.18,
-    elevation: 400, slope_deg: 12, drainage_density: 1.5,
-    ndvi: 0.6, ndwi: 0.1, land_surface_temp: 30, mineral_alteration_index: 0.7,
-    mn_ppm_soil: 1600, magnetic_anomaly_nt: 95, distance_to_fault_km: 3,
-    distance_to_known_mine_km: 2, geology_type: "gondite_archean",
-  });
+export default function AIAnalysisPage({ selectedMine, mines = [] }) {
+  const [lat, setLat] = useState(selectedMine?.lat || 21.8);
+  const [lng, setLng] = useState(selectedMine?.lng || 80.18);
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [ndviLoading, setNdviLoading] = useState(false);
-  const [ndviSource, setNdviSource] = useState(null);
-
-  async function fetchRealNdvi() {
-    setNdviLoading(true);
-    setNdviSource(null);
-    try {
-      const res = await api.getRealNdvi(form.lat, form.lng);
-      setForm((s) => ({ ...s, ndvi: res.ndvi }));
-      setNdviSource(res.source);
-    } catch (e) {
-      setNdviSource("Failed to fetch — check backend has Earth Engine authenticated");
-    } finally {
-      setNdviLoading(false);
-    }
-  }
 
   async function runAnalysis() {
     setLoading(true);
     setError(null);
+    setResult(null);
     try {
-      const res = await api.predictProspectivity(form);
+      const res = await api.predictPoint(lat, lng);
       setResult(res);
     } catch (e) {
-      setError("Could not reach the prediction API. Is the backend running?");
+      setError(e.message || "Could not reach the prediction API. Is the backend running?");
     } finally {
       setLoading(false);
     }
   }
 
-  const donutData = result
-    ? [
-        { name: "High", value: result.prospectivity_score > 0.6 ? 82 : result.prospectivity_score > 0.4 ? 30 : 6 },
-        { name: "Medium", value: result.prospectivity_score > 0.6 ? 12 : result.prospectivity_score > 0.4 ? 45 : 20 },
-        { name: "Low", value: result.prospectivity_score > 0.6 ? 6 : result.prospectivity_score > 0.4 ? 25 : 74 },
-      ]
-    : [];
-  const DONUT_COLORS = ["#EF4444", "#F59E0B", "#10B981"];
+  function pickMine(e) {
+    const m = mines.find((x) => String(x.id) === e.target.value);
+    if (m) { setLat(m.lat); setLng(m.lng); }
+  }
+
+  const featureChartData = (result?.top_features || [])
+    .map((f) => ({ name: f.name, contribution: f.contribution }))
+    .sort((a, b) => b.contribution - a.contribution);
 
   return (
     <div>
-      <div style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 12, padding: 20, marginBottom: 20 }}>
-        <h3 style={{ fontSize: 15, marginBottom: 4 }}>AI Analysis & Results</h3>
+      <div className="card" style={{ marginBottom: 20 }}>
+        <h3 style={{ fontSize: 15, marginBottom: 4 }}>Prospectivity Analysis</h3>
         <p style={{ fontSize: 12, color: "var(--text-soft)", marginBottom: 16 }}>
-          AI-powered analysis using geology, remote sensing, geochemical, geophysical, terrain, and ground-truth data.
+          Runs the live pipeline (satellite, geology, terrain, model, viability) for a coordinate. This is
+          the same v3 pipeline used by the Map tab's point inspector.
         </p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: 10, marginBottom: 14 }}>
-          {[
-            { key: "lat", label: "Latitude" }, { key: "lng", label: "Longitude" },
-            { key: "elevation", label: "Elevation (m)" }, { key: "slope_deg", label: "Slope (deg)" },
-            { key: "ndvi", label: "NDVI" }, { key: "mn_ppm_soil", label: "Mn ppm (soil)" },
-            { key: "magnetic_anomaly_nt", label: "Magnetic anomaly (nT)" },
-            { key: "distance_to_known_mine_km", label: "Dist. to known mine (km)" },
-          ].map((f) => (
-            <label key={f.key} style={{ fontSize: 11, color: "var(--text-soft)" }}>
-              {f.label}
-              <input
-                type="number" step="any" value={form[f.key]}
-                onChange={(e) => setForm((s) => ({ ...s, [f.key]: parseFloat(e.target.value) }))}
-                style={{ display: "block", width: "100%", marginTop: 3, padding: "5px 7px", background: "var(--page-bg)", color: "var(--text)", border: "1px solid var(--border)", borderRadius: 6, fontSize: 13 }}
-              />
-            </label>
-          ))}
+
+        <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "flex-end", marginBottom: 14 }}>
           <label style={{ fontSize: 11, color: "var(--text-soft)" }}>
-            Geology type
-            <select
-              value={form.geology_type}
-              onChange={(e) => setForm((s) => ({ ...s, geology_type: e.target.value }))}
-              style={{ display: "block", width: "100%", marginTop: 3, padding: "5px 7px", background: "var(--page-bg)", color: "var(--text)", border: "1px solid var(--border)", borderRadius: 6, fontSize: 13 }}
-            >
-              {GEOLOGY_OPTIONS.map((g) => <option key={g} value={g}>{g}</option>)}
-            </select>
+            Latitude
+            <input
+              type="number" step="any" value={lat}
+              onChange={(e) => setLat(parseFloat(e.target.value))}
+              style={{ display: "block", width: 140, marginTop: 3, padding: "6px 8px", background: "var(--page-bg)", color: "var(--text)", border: "1px solid var(--border)", borderRadius: 6, fontSize: 13 }}
+            />
           </label>
+          <label style={{ fontSize: 11, color: "var(--text-soft)" }}>
+            Longitude
+            <input
+              type="number" step="any" value={lng}
+              onChange={(e) => setLng(parseFloat(e.target.value))}
+              style={{ display: "block", width: 140, marginTop: 3, padding: "6px 8px", background: "var(--page-bg)", color: "var(--text)", border: "1px solid var(--border)", borderRadius: 6, fontSize: 13 }}
+            />
+          </label>
+          {mines.length > 0 && (
+            <label style={{ fontSize: 11, color: "var(--text-soft)" }}>
+              Or pick a known mine
+              <select
+                defaultValue=""
+                onChange={pickMine}
+                style={{ display: "block", width: 220, marginTop: 3, padding: "6px 8px", background: "var(--page-bg)", color: "var(--text)", border: "1px solid var(--border)", borderRadius: 6, fontSize: 13 }}
+              >
+                <option value="" disabled>Select a mine…</option>
+                {mines.map((m) => <option key={m.id} value={m.id}>{m.name}</option>)}
+              </select>
+            </label>
+          )}
+          <button
+            onClick={runAnalysis}
+            disabled={loading}
+            style={{ background: "linear-gradient(135deg, #2563EB, #1D4ED8)", color: "white", padding: "11px 22px", boxShadow: "0 2px 8px rgba(37,99,235,0.35)", fontWeight: 600, fontSize: 13 }}
+          >
+            {loading ? "Running analysis…" : "Run analysis"}
+          </button>
         </div>
-        <button onClick={runAnalysis} disabled={loading} style={{ background: "linear-gradient(135deg, #2563EB, #1D4ED8)", color: "white", padding: "11px 22px", boxShadow: "0 2px 8px rgba(37,99,235,0.35)", fontWeight: 600, fontSize: 13 }}>
-          {loading ? "Running Analysis…" : "Run Analysis"}
-        </button>
-        <button
-          onClick={fetchRealNdvi}
-          disabled={ndviLoading}
-          style={{ background: "white", color: "var(--accent-green)", border: "1px solid var(--accent-green)", padding: "10px 18px", fontWeight: 600, fontSize: 13, marginLeft: 10 }}
-        >
-          {ndviLoading ? "Fetching…" : "🛰️ Fetch real NDVI (Sentinel-2)"}
-        </button>
-        {ndviSource && (
-          <p style={{ fontSize: 11, color: ndviSource.startsWith("Failed") ? "var(--danger-red)" : "var(--accent-green)", marginTop: 8 }}>
-            {ndviSource}
-          </p>
-        )}
-        {error && <p style={{ color: "var(--danger-red)", marginTop: 10, fontSize: 13 }}>{error}</p>}
+
+        {error && <p style={{ color: "var(--danger-red)", fontSize: 13 }}>{error}</p>}
       </div>
 
       {result && (
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1.2fr", gap: 20 }}>
-          <div style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 12, padding: 20 }}>
-            <h4 style={{ fontSize: 13, marginBottom: 12 }}>AI Prediction Results</h4>
-            <ResponsiveContainer width="100%" height={160}>
-              <PieChart>
-                <Pie data={donutData} dataKey="value" innerRadius={40} outerRadius={65} paddingAngle={2}>
-                  {donutData.map((_, i) => <Cell key={i} fill={DONUT_COLORS[i]} />)}
-                </Pie>
-                <Tooltip contentStyle={{ background: "white", border: "1px solid var(--border)", borderRadius: 8, color: "var(--text)" }} />
-              </PieChart>
-            </ResponsiveContainer>
-            <div style={{ textAlign: "center", marginTop: -8 }}>
-              <div style={{ fontFamily: "var(--font)", fontSize: 24, fontWeight: 700, color: "var(--warning-orange)" }}>
-                {result.prospectivity_score}
-              </div>
-              <div style={{ fontSize: 11, color: "var(--text-soft)" }}>prospectivity score</div>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1.3fr", gap: 20 }}>
+          <div className="card">
+            <h4 style={{ fontSize: 13, marginBottom: 12 }}>Prospectivity</h4>
+            <div style={{
+              display: "inline-block", padding: "3px 10px", borderRadius: 6, marginBottom: 10,
+              background: LEVEL_COLOR[result.level] || "var(--border)", color: "white", fontSize: 12, fontWeight: 600,
+            }}>
+              {result.level}
             </div>
-          </div>
+            <div style={{ fontFamily: "var(--font)", fontSize: 32, fontWeight: 700, marginBottom: 4 }}>
+              {result.prospectivity.prospectivity_score}
+            </div>
+            <div style={{ fontSize: 11, color: "var(--text-soft)", marginBottom: 16 }}>prospectivity score</div>
 
-          <div style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 12, padding: 20 }}>
-            <h4 style={{ fontSize: 13, marginBottom: 12 }}>Estimated Reserves</h4>
-            <div style={{ fontFamily: "var(--font)", fontSize: 18, fontWeight: 600, marginBottom: 4 }}>
-              {result.reserve_min.toLocaleString()} – {result.reserve_max.toLocaleString()} t
-            </div>
-            <div style={{ fontSize: 12, color: "var(--text-soft)", marginBottom: 16 }}>Manganese (approx.)</div>
-            <h4 style={{ fontSize: 13, marginBottom: 6 }}>Model Confidence (R²)</h4>
+            <h4 style={{ fontSize: 13, marginBottom: 6 }}>Confidence for this point</h4>
             <div style={{ background: "var(--border)", borderRadius: 4, height: 8, overflow: "hidden", marginBottom: 4 }}>
-              <div style={{ width: `${result.confidence * 100}%`, height: "100%", background: "var(--primary-blue)" }} />
+              <div style={{ width: `${result.prospectivity.confidence * 100}%`, height: "100%", background: "var(--primary-blue)" }} />
             </div>
-            <div style={{ fontSize: 12, color: "var(--text-soft)" }}>{Math.round(result.confidence * 100)}%</div>
+            <div style={{ fontSize: 12, color: "var(--text-soft)", marginBottom: 12 }}>{Math.round(result.prospectivity.confidence * 100)}% agreement across the model's 250 trees</div>
+
+            <h4 style={{ fontSize: 13, marginBottom: 4 }}>Overall model skill (R²)</h4>
+            <div style={{ fontSize: 13 }}>{result.prospectivity.model_r2}</div>
           </div>
 
-          <div style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 12, padding: 20 }}>
-            <h4 style={{ fontSize: 13, marginBottom: 12 }}>Key Model Factors</h4>
-            {KEY_FACTORS.map((f) => (
-              <div key={f.name} style={{ marginBottom: 8 }}>
-                <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, marginBottom: 3 }}>
-                  <span>{f.name}</span><span style={{ color: "var(--text-soft)" }}>{f.value}%</span>
-                </div>
-                <div style={{ background: "var(--border)", borderRadius: 4, height: 6, overflow: "hidden" }}>
-                  <div style={{ width: `${f.value * 2}%`, height: "100%", background: "var(--primary-blue)" }} />
-                </div>
-              </div>
-            ))}
-            <p style={{ fontSize: 10, color: "var(--text-soft)", marginTop: 10 }}>
-              From the trained model's actual feature importances (RandomForest, 15 features).
+          <div className="card">
+            <h4 style={{ fontSize: 13, marginBottom: 12 }}>Reserves and viability</h4>
+            <div style={{ fontFamily: "var(--font)", fontSize: 18, fontWeight: 600, marginBottom: 4 }}>
+              {result.prospectivity.reserve_min_tonnes?.toLocaleString?.()} – {result.prospectivity.reserve_max_tonnes?.toLocaleString?.()} t
+            </div>
+            <div style={{ fontSize: 12, color: "var(--text-soft)", marginBottom: 16 }}>Estimated manganese reserve range</div>
+
+            <h4 style={{ fontSize: 13, marginBottom: 6 }}>Viability index</h4>
+            <div style={{ fontFamily: "var(--font)", fontSize: 24, fontWeight: 700, marginBottom: 10 }}>
+              {result.viability?.viability_index}
+            </div>
+
+            <h4 style={{ fontSize: 13, marginBottom: 4 }}>Nearest known mine</h4>
+            <div style={{ fontSize: 13, marginBottom: 10 }}>{result.nearest_mine}</div>
+
+            {result.forecast && (
+              <>
+                <h4 style={{ fontSize: 13, marginBottom: 4 }}>Production shortfall risk</h4>
+                <div style={{ fontSize: 13 }}>{result.forecast.risk_level}</div>
+              </>
+            )}
+          </div>
+
+          <div className="card">
+            <h4 style={{ fontSize: 13, marginBottom: 12 }}>Top contributing features</h4>
+            {featureChartData.length > 0 ? (
+              <ResponsiveContainer width="100%" height={220}>
+                <BarChart data={featureChartData} layout="vertical" margin={{ left: 10, right: 20 }}>
+                  <XAxis type="number" tick={{ fontSize: 11 }} />
+                  <YAxis type="category" dataKey="name" width={130} tick={{ fontSize: 11 }} />
+                  <Tooltip contentStyle={{ background: "white", border: "1px solid var(--border)", borderRadius: 8, fontSize: 12 }} />
+                  <Bar dataKey="contribution" radius={[0, 4, 4, 0]}>
+                    {featureChartData.map((f, i) => (
+                      <Cell key={i} fill={f.contribution >= 0 ? "var(--accent-green)" : "var(--danger-red)"} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            ) : (
+              <p style={{ fontSize: 12, color: "var(--text-soft)" }}>No feature breakdown returned.</p>
+            )}
+            <p style={{ fontSize: 10, color: "var(--text-soft)", marginTop: 8 }}>
+              Per-point perturbation-based explanation from the live model, computed for this exact coordinate.
+            </p>
+          </div>
+
+          <div className="card" style={{ gridColumn: "1 / -1" }}>
+            <h4 style={{ fontSize: 13, marginBottom: 12 }}>Site attributes</h4>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 16 }}>
+              <Stat label="Thickness (illustrative)" value={result.thickness ? `${result.thickness.thickness_m} m` : "-"} />
+              <Stat label="Water table depth (illustrative)" value={result.water_table ? `${result.water_table.water_table_depth_m} m` : "-"} />
+              <Stat label="Social infrastructure score" value={result.social_infra?.social_infra_score ?? "-"} />
+              <Stat label="Known operators nearby" value={result.companies?.length > 0 ? result.companies.join(", ") : "None on record"} />
+            </div>
+            <p style={{ fontSize: 10, color: "var(--text-soft)", marginTop: 12 }}>
+              Thickness, water table and per-point social infrastructure score are illustrative estimates
+              calibrated to real state and geology averages, not direct borehole or CGWB measurements.
             </p>
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+function Stat({ label, value }) {
+  return (
+    <div>
+      <div style={{ fontSize: 11, color: "var(--text-soft)" }}>{label}</div>
+      <div style={{ fontSize: 14, fontWeight: 600 }}>{value}</div>
     </div>
   );
 }

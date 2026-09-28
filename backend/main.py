@@ -1,25 +1,24 @@
-"""
-SIH26009 Backend — FastAPI service
-Serves mock mine/production/risk data and wraps the two ML models
-(prospectivity + production forecast) as prediction endpoints.
-
-Run with:
-    uvicorn main:app --reload --port 8000
-"""
 import json
 import os
 from typing import Optional
+
+# Load GEE_PROJECT_ID / GROQ_API_KEY / FRONTEND_URL from a .env file if one
+# exists (backend/.env). On Render/Vercel you set these as real environment
+# variables instead — load_dotenv() never overrides a variable that's already set.
+from dotenv import load_dotenv
+load_dotenv()
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from ml.predict import predict_prospectivity, predict_forecast
+from ml.routes_map import router as map_router
+from ml.chatbot_backend import router as chat_router
+from ml.csv_upload import router as upload_router
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MOCK_DIR = os.path.join(BASE_DIR, "data", "mock")
-
-import os
 
 app = FastAPI(title="SIH26009 Manganese Intelligence API", version="1.0")
 
@@ -36,6 +35,17 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+# New ML pipeline routers.
+#  /api/map/*  -> zones grid, predict_point, GeoJSON mines, water table
+#  /api/chat   -> tool-calling chatbot (needs GROQ_API_KEY)
+# Mounted under /api/map (not /api) because /api/mines below already returns
+# the mock-mines JSON list the existing frontend uses; /api/map/mines is the
+# GeoJSON version for ProspectivityMap.jsx.
+app.include_router(map_router, prefix="/api/map")
+app.include_router(chat_router, prefix="/api")
+app.include_router(upload_router, prefix="/api/upload")
 
 
 def load_json(filename: str):
@@ -113,7 +123,6 @@ def get_prospectivity_zones():
 
 @app.get("/api/moil_real_mines")
 def get_moil_real_mines():
-    """Real MOIL mine names and approximate locations, sourced from moil.nic.in and steel.gov.in."""
     path = os.path.join(BASE_DIR, "data", "moil_real_locations.json")
     with open(path) as f:
         return json.load(f)
@@ -121,8 +130,6 @@ def get_moil_real_mines():
 
 @app.get("/api/satellite/ndvi")
 def api_real_ndvi(lat: float, lng: float):
-    """Fetches REAL NDVI from Sentinel-2 via Google Earth Engine — not synthetic.
-    Requires `earthengine authenticate` to have been run once on this machine."""
     try:
         from satellite import get_real_ndvi
         value = get_real_ndvi(lat, lng)

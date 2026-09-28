@@ -1,12 +1,3 @@
-"""
-predict.py — drop-in prediction wrapper for SIH26009.
-
-Backend usage:
-    from predict import predict_prospectivity, predict_forecast
-
-Both functions take a flat dict of raw feature values and return a JSON-serializable dict.
-Both are defensive: missing keys are filled with 0/reindexed, so a partial payload won't crash.
-"""
 import joblib
 import pandas as pd
 import os
@@ -17,15 +8,6 @@ _forecast_bundle = joblib.load(os.path.join(_DIR, "models", "forecast_v1.pkl"))
 
 
 def predict_prospectivity(features: dict) -> dict:
-    """
-    Expected keys (v2 - covers geological, remote sensing, geochemical,
-    geophysical, terrain, and ground-truth parameter categories):
-      lat, lng, elevation, slope_deg, drainage_density,
-      ndvi, ndwi, land_surface_temp, mineral_alteration_index,
-      mn_ppm_soil, magnetic_anomaly_nt,
-      distance_to_fault_km, distance_to_known_mine_km,
-      geology_type (one of: gondite_archean, archean, kodurite_archean, laterite)
-    """
     df = pd.DataFrame([features])
     df = pd.get_dummies(df)
     df = df.reindex(columns=_prospectivity_bundle["columns"], fill_value=0)
@@ -40,10 +22,6 @@ def predict_prospectivity(features: dict) -> dict:
 
 
 def predict_forecast(features: dict) -> dict:
-    """
-    Expected keys: historical_avg, planned_tonnes, downtime_hours, rainfall,
-                   mine_type (one of: underground, opencast)
-    """
     df = pd.DataFrame([features])
     df = pd.get_dummies(df)
     df = df.reindex(columns=_forecast_bundle["columns"], fill_value=0)
