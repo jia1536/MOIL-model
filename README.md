@@ -16,7 +16,7 @@ Visit http://127.0.0.1:8000/docs to see and test every endpoint interactively (F
 
 **Note:** requires `scikit-learn==1.8.0` exactly — already pinned in requirements.txt.
 
-## Frontend setup
+## Frontend  setup
 
 Open a **second** terminal (keep the backend running in the first):
 
@@ -53,3 +53,4 @@ It'll print a local URL (usually http://localhost:5173) — open that in your br
 - Map tiles (OpenStreetMap) require internet access — if your laptop is offline, markers will still show but the background map won't render.
 - CORS is currently wide open (`allow_origins=["*"]`) for easy local development — tighten this to your actual frontend URL before any public deployment.
 - This uses mock data throughout — see `docs/methodology.md` in your ML deliverables for the full honest breakdown of what's real vs. synthetic.
+- 
