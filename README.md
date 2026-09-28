@@ -1,4 +1,4 @@
-# SIH26009 — Manganese Intelligence Dashboard
+# Manganese Intelligence Dashboard
 
 A working full-stack app: FastAPI backend serving mock/real data + your two ML models, and a React frontend with a live map, production charts, risk breakdown, and an interactive prospectivity prediction tool.
 
