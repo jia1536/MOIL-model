@@ -1,6 +1,5 @@
-const BASE =
-  import.meta.env.VITE_API_BASE_URL ||
-  "https://sih26009-backend.onrender.com";
+const BASE = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
+export const API_BASE = BASE;
 
 async function get(path) {
   const res = await fetch(`${BASE}${path}`);
@@ -63,6 +62,11 @@ export const api = {
       persist,
     }),
   getUploadTemplateUrl: (mode = "score") => `${BASE}/api/upload/template?mode=${mode}`,
+
+  // --- Comparison and reserve depletion (real IBM Yearbook and world tables) ---
+  getCompareStates: (states) => get(`/api/compare/states${states ? `?states=${encodeURIComponent(states)}` : ""}`),
+  getCompareCountries: (countries) => get(`/api/compare/countries${countries ? `?countries=${encodeURIComponent(countries)}` : ""}`),
+  getDepletion: (state) => get(`/api/depletion${state ? `?state=${encodeURIComponent(state)}` : ""}`),
 
   // --- Tool-calling chatbot ---
   chat: (message, history = []) => post("/api/chat", { message, history }),

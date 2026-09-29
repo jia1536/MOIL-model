@@ -9,7 +9,7 @@ from .routes_map import score_zone
 from .data_loader import MINES, find_mine_by_name, get_mine_operational_inputs, get_state_reserve_and_production
 from .grade_lookup import get_grade_for_mine
 from .companies_lookup import get_companies_for_mine
-from .country_comparison import compare_countries as compare_countries_fn
+from .state_analysis import compare_states, depletion_report, compare_countries_report
 
 router = APIRouter()
 MODEL = "openai/gpt-oss-120b"
@@ -98,7 +98,8 @@ TOOLS = [
         "type": "function",
         "function": {
             "name": "compare_state_reserves",
-            "description": "Compare real reserve and 2020-21 production figures for two or more Indian states.",
+            "description": "Compare real reserves, remaining resources, 2020-21 production, production trend and "
+                "years of reserves left for two or more Indian states.",
             "parameters": {
                 "type": "object",
                 "properties": {"states": {"type": "array", "items": {"type": "string"}}},
@@ -133,6 +134,21 @@ TOOLS = [
                 "type": "object",
                 "properties": {"countries": {"type": "array", "items": {"type": "string"}}},
                 "required": ["countries"],
+            },
+        },
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_reserve_depletion",
+            "description": (
+                "Years of proven reserves left at the current production rate for Indian states, "
+                "most urgent first, with a Critical / Watch / Adequate status. Pass a state name "
+                "for one state, or leave it out for all states."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {"state": {"type": "string"}},
             },
         },
     },
@@ -173,11 +189,21 @@ def execute_tool(name: str, tool_input: dict) -> dict:
         return {"ranked_zones": ranked}
 
     if name == "compare_state_reserves":
-        result = {}
-        for state in tool_input["states"]:
-            reserve, production = get_state_reserve_and_production(state)
-            result[state] = {"remaining_reserve_tonnes": reserve, "annual_production_2020_21_tonnes": production}
-        return result
+        report = compare_states(tool_input["states"])
+        return {
+            "states": [
+                {k: v for k, v in row.items() if k != "production_history"}
+                for row in report["states"]
+            ],
+            "not_found": report["not_found"],
+            "notes": report["notes"],
+        }
+
+    if name == "get_reserve_depletion":
+        report = depletion_report(tool_input.get("state"))
+        if report is None:
+            return {"error": f"No reserve data for state '{tool_input.get('state')}'"}
+        return report
 
     if name == "get_grade_and_companies":
         mine = find_mine_by_name(tool_input["mine_name"])
@@ -190,7 +216,11 @@ def execute_tool(name: str, tool_input: dict) -> dict:
         return {"mine": mine["name"], "grade": grade, "companies": companies}
 
     if name == "compare_countries":
-        return compare_countries_fn(tool_input["countries"])
+        report = compare_countries_report(tool_input["countries"])
+        if not report["countries"]:
+            return {"error": "No matching countries. Available: " + ", ".join(
+                r["country"] for r in compare_countries_report()["countries"])}
+        return report
 
     return {"error": f"Unknown tool {name}"}
 

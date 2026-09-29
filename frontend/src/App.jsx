@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { LayoutDashboard, Map as MapIcon, Brain, FileBarChart, Lightbulb, Bell, Mountain, Layers, MapPin, TriangleAlert, Gem, UploadCloud, MessageSquare } from "lucide-react";
-import { api } from "./api";
+import { LayoutDashboard, Map as MapIcon, Brain, FileBarChart, Lightbulb, Bell, Mountain, Layers, MapPin, TriangleAlert, Gem, UploadCloud, MessageSquare, Scale } from "lucide-react";
+import { api, API_BASE } from "./api";
 import MineMap, { LEVEL_COLORS } from "./components/MineMap";
 import ProductionChart from "./components/ProductionChart";
 import RiskPanel from "./components/RiskPanel";
@@ -11,6 +11,7 @@ import RecommendationsPage from "./components/RecommendationsPage";
 import PointInspector from "./components/PointInspector";
 import UploadDataPage from "./components/UploadDataPage";
 import ChatPage from "./components/ChatPage";
+import ComparePage from "./components/ComparePage";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsAndConditions from "./components/TermsAndConditions";
 import "./tokens.css";
@@ -19,6 +20,7 @@ const NAV = [
   { label: "Dashboard", icon: LayoutDashboard },
   { label: "Map", icon: MapIcon },
   { label: "Prospectivity Analysis", icon: Brain },
+  { label: "Compare", icon: Scale },
   { label: "Chat", icon: MessageSquare },
   { label: "Reports", icon: FileBarChart },
   { label: "Recommendations", icon: Lightbulb },
@@ -38,6 +40,8 @@ export default function App() {
   const [recommendation, setRecommendation] = useState(null);
   const [forecast, setForecast] = useState([]);
   const [loadError, setLoadError] = useState(null);
+  const [initialLoading, setInitialLoading] = useState(true);
+  const [slowLoad, setSlowLoad] = useState(false);
 
   // Real v3 pipeline zones (satellite + geology + model + viability), fetched
   // lazily the first time the Map tab is opened — this hits a live grid
@@ -52,6 +56,7 @@ export default function App() {
   const [pointError, setPointError] = useState(null);
 
   useEffect(() => {
+    const slowTimer = setTimeout(() => setSlowLoad(true), 6000);
     Promise.all([api.getMines(), api.getProspectivityZones(), api.getMoilRealMines()])
       .then(([m, z, real]) => {
         setMines(m);
@@ -60,7 +65,16 @@ export default function App() {
         const firstActive = m.find((x) => x.status === "active");
         if (firstActive) setSelectedMineId(firstActive.id);
       })
-      .catch(() =>setLoadError( `Could not reach the backend API at ${BASE}. Is it running?`));
+      .catch(() => setLoadError(
+        API_BASE.includes("127.0.0.1") || API_BASE.includes("localhost")
+          ? `Could not reach the backend API at ${API_BASE}. Is it running?`
+          : `Could not reach the backend API at ${API_BASE}.`
+      ))
+      .finally(() => {
+        clearTimeout(slowTimer);
+        setInitialLoading(false);
+      });
+    return () => clearTimeout(slowTimer);
   }, []);
 
   useEffect(() => {
@@ -98,14 +112,41 @@ export default function App() {
   const activeMines = mines.filter((m) => m.status === "active").length;
   const highPotential = zones ? zones.features.filter((f) => f.properties.prospectivity_score > 0.6).length : 0;
 
+  if (initialLoading) {
+    return (
+      <div style={{
+        minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+        fontFamily: "var(--font)", background: "var(--page-bg)", gap: 14, padding: 24, textAlign: "center",
+      }}>
+        <div style={{
+          width: 32, height: 32, borderRadius: "50%", border: "3px solid var(--border)",
+          borderTopColor: "var(--primary-blue)", animation: "spin 0.8s linear infinite",
+        }} />
+        <style>{"@keyframes spin { to { transform: rotate(360deg); } }"}</style>
+        <p style={{ color: "var(--text-soft)", fontSize: 14, maxWidth: 380 }}>
+          {slowLoad
+            ? "Still waking up the backend. Free hosting tiers spin down after inactivity, so the first load can take up to a minute. It'll be fast after this."
+            : "Loading the manganese intelligence platform..."}
+        </p>
+      </div>
+    );
+  }
+
   if (loadError) {
     return (
       <div style={{ padding: 40, fontFamily: "var(--font)" }}>
         <h2>Can't reach the backend</h2>
         <p style={{ color: "var(--text-soft)" }}>{loadError}</p>
-        <p style={{ color: "var(--text-soft)", fontSize: 14 }}>
-          Start it with: <code>cd backend && uvicorn main:app --reload --port 8000</code>
-        </p>
+        {API_BASE.includes("127.0.0.1") || API_BASE.includes("localhost") ? (
+          <p style={{ color: "var(--text-soft)", fontSize: 14 }}>
+            Start it with: <code>cd backend && uvicorn main:app --reload --port 8000</code>
+          </p>
+        ) : (
+          <p style={{ color: "var(--text-soft)", fontSize: 14 }}>
+            If this backend is on a free hosting tier, it may have failed to wake up in time.
+            Reload the page in a moment, or check that the backend service is running.
+          </p>
+        )}
       </div>
     );
   }
@@ -318,6 +359,12 @@ export default function App() {
         {tab === "Prospectivity Analysis" && (
           <main style={{ padding: 28, flex: 1 }}>
             <AIAnalysisPage selectedMine={selectedMine} mines={mines} />
+          </main>
+        )}
+
+        {tab === "Compare" && (
+          <main style={{ padding: 28, flex: 1, overflow: "auto" }}>
+            <ComparePage />
           </main>
         )}
 

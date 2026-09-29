@@ -16,6 +16,7 @@ from ml.predict import predict_prospectivity, predict_forecast
 from ml.routes_map import router as map_router
 from ml.chatbot_backend import router as chat_router
 from ml.csv_upload import router as upload_router
+from ml.routes_compare import router as compare_router
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MOCK_DIR = os.path.join(BASE_DIR, "data", "mock")
@@ -46,6 +47,7 @@ app.add_middleware(
 app.include_router(map_router, prefix="/api/map")
 app.include_router(chat_router, prefix="/api")
 app.include_router(upload_router, prefix="/api/upload")
+app.include_router(compare_router, prefix="/api")
 
 
 def load_json(filename: str):
